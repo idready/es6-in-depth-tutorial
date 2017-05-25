@@ -87,7 +87,8 @@ console.info(kd, kingName);
 
 const {length : len} = 'abc'; // len = 3
 const {toString: s} = 123; // s = Number.prototype.toString
-
+// Which means above we are reaching [Value].prototype.[length/toString] properties on the prvovided value on the right side. 'abc'.prototype.length === 3 === len
+console.info(`len ${len} and s ${s}`);
 //Beware to block scope, it must be surrouned with parenthesis since statement can't start with curly braces
 let son = {nameStr: 'Simba', parents: 2};
 let nameStr, parents;
@@ -129,5 +130,9 @@ const budget = () => {
 
 let wallet = budget();
 console.info(wallet);
+console.info(wallet.check());
+console.info(wallet.deposit20());
+console.info(wallet.check());
+console.info(wallet.withdraw20());
 console.info(wallet.check());
 console.info(wallet.deposit20());
